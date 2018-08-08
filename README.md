@@ -1,2 +1,2 @@
 # macos-thinkpad-x201
-Mac OS X on a ThinkPad X201?
+(Underdevelopment) Mac OS X on a ThinkPad X201?
