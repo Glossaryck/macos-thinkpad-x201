@@ -15,13 +15,13 @@
 - Hibernation
 - VGA Output (no support)
 
-**_Preparation_**
+**_I. Preparation_**
 You will need:
 - A thumb drive of at least 8GB
 - A computer with macOS preinstalled (a virtual machine works as well, I recommend [this](https://techsviewer.com/how-to-install-mac-os-x-el-capitan-on-vmware-on-pc/)
 - An Apple ID
 
-**_Creating the installation medium_**
+**_II. Creating the installation medium_**
 Creating the installer manually is recommended since UniBeast may have bugs on this particular machine.
 - Grab a copy of macOS Sierra from the App Store on the prepared OS X machine.
 - Right click on the installer app you just downloaded and select Show Package Contents.
@@ -44,11 +44,12 @@ The hidden file on the OS X Install ESD disk image will now show up.
 - Install Clover on the USB.
  Use the installer from tools.zip above, change install location to the target USB drive.
  Then customize the installation as follows:
+```
  + Expand the Bootloader section and check "Install boot0af in MBR"
  + Expand the CloverEFI section and check "CloverEFI 64-bits SATA"
  + Leave every section not mentioned above unchecked.
-
-**_Modifing the installation medium_**
+```
+**_III. Modifing the installation medium_**
 - First off, on the installation USB go to System/Library/Extensions and delete:
  AppleIntelHDGraphics.kext
  AppleIntelHDGraphicsFB.kext
@@ -60,11 +61,12 @@ The hidden file on the OS X Install ESD disk image will now show up.
 - Finally, replace the config.plist file in EFI/CLOVER/ with the config.plist file found in this repo
 - You should now be able to boot to the installer using the USB.
 
-**_Install macOS_**
+**_IV.Install macOS_**
 - Boot into the USB drive. The Installer should now start up.
+- Launch Disk Utility and erase your destination volume.
 - Follow the instructions and install as normal.
 
-**_Post-installation_**
+**_V. Post-installation_**
 - Boot to the installer drive.
 - Launch Terminal and execute these commands:
 ```
@@ -73,4 +75,20 @@ The hidden file on the OS X Install ESD disk image will now show up.
  rm -rf AppleIntelHDGraphicsFB.kext
 ```
 - Boot to the partition where you installed OS X. Follow the onscreen instructions to finish the installation. 
-After completing the initial setup instructions, your desktop should now appear. Welcome to macOS! 
+After completing the initial setup instructions, your desktop should now appear.
+
+**_VI. Post-installation: Installing Clover_**
+Install and config Clover on your macOS volume, using the exact same step you did with your installation medium in steps II and III.
+
+**macOS should now be up and running on your X201!**
+
+**_Extras:_**
+
+Disable Hibernation and related options: used to deal with hibernation related problems
+```
+    sudo pmset -a hibernatemode 0
+    sudo rm /var/vm/sleepimage
+    sudo mkdir /var/vm/sleepimage
+    sudo pmset -a standby 0
+    sudo pmset -a autopoweroff 0
+```
