@@ -1,2 +1,2 @@
 # macos-thinkpad-x201
-(Underdevelopment) macOS Sierra on a ThinkPad X201?
+(Underdeveloped) macOS Sierra on a ThinkPad X201?
