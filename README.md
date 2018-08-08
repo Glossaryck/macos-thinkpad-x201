@@ -64,6 +64,17 @@ The hidden file on the OS X Install ESD disk image will now show up.
 
 **_Install macOS_**
 ```
-- Boot to the installer using the USB drive.
+- Boot into the USB drive. The Installer should now start up.
 - Follow the instructions and install as normal.
+```
+
+**_Post-installation_**
+```
+- Boot to the installer drive.
+- Launch Terminal and execute these commands:
+ cd /Volumes/Macintosh\ HD/System/Library/Extensions
+ rm -rf AppleIntelHDGraphics.kext
+ rm -rf AppleIntelHDGraphicsFB.kext
+- Boot to the partition where you installed OS X. Follow the onscreen instructions to finish the installation. 
+After completing the initial setup instructions, your desktop should now appear. Welcome to macOS! 
 ```
