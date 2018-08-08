@@ -53,7 +53,7 @@ The hidden file on the OS X Install ESD disk image will now show up.
  + Expand the CloverEFI section and check "CloverEFI 64-bits SATA"
  + Leave every section not mentioned above unchecked.
 ```
-**_III. Modifing the installation medium_**
+**_III. Modifying the installation medium_**
 - First off, on the installation USB go to System/Library/Extensions and delete:
  AppleIntelHDGraphics.kext
  AppleIntelHDGraphicsFB.kext
@@ -65,7 +65,7 @@ The hidden file on the OS X Install ESD disk image will now show up.
 - Finally, replace the config.plist file in EFI/CLOVER/ with the config.plist file found in this repo
 - You should now be able to boot to the installer using the USB.
 
-**_IV.Install macOS_**
+**_IV. Install macOS_**
 - Boot into the USB drive. The Installer should now start up.
 - Launch Disk Utility and erase your destination volume.
 - Follow the instructions and install as normal.
