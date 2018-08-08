@@ -35,7 +35,7 @@ Creating the installer manually is recommended since UniBeast may have bugs on t
  defaults write com.apple.finder AppleShowAllFiles YES
  killall Finder
 The hidden file on the OS X Install ESD disk image will now show up.
-- Mount the BaseSystem.dmg file from OS X Install ESD.
+- Mount the BaseSystem.dmg file from the OS X Install ESD disk image.
 - Fire up Disk Utility and format the target USB in HFS+ (Journaled)
 - Restore the target USB from the OS X Base System drive on the left pane.
 - When finished, open the newly restored USB drive.
@@ -47,5 +47,18 @@ The hidden file on the OS X Install ESD disk image will now show up.
  + Expand the Bootloader section and check "Install boot0af in MBR"
  + Expand the CloverEFI section and check "CloverEFI 64-bits SATA"
  + Leave every section not mentioned above unchecked.
-- You should now have a bootable Sierra installer USB.
+```
+
+**_Modifing the installation medium_**
+```
+- First off, on the installation USB go to System/Library/Extensions and delete:
+ AppleIntelHDGraphics.kext
+ AppleIntelHDGraphicsFB.kext
+- Now go to EFI/CLOVER/drivers64/
+- Remove everything from the above folder and put the files in the drivers64UEFI folder from this repository in it.
+- Repeat the process with the drivers64UEFI folder in EFI/Clover/
+- In EFI/CLOVER/kexts/ delete everything excluding the "Other" folder.
+- Copy the kexts in the kext folder from this repo to the "Other" folder.
+- Finally, replace the config.plist file in EFI/CLOVER/ with the config.plist file found in this repo
+- You should now be able to boot to the installer using the USB.
 ```
