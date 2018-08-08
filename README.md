@@ -1,6 +1,9 @@
 # macos-thinkpad-x201
 **(Underdeveloped) macOS Sierra on a ThinkPad X201?**
+
 Credit goes to [this OSXLatitude post](https://osxlatitude.com/forums/topic/10016-macos-x-sierra-on-thinkpad-x201-successful/), [this guy](https://github.com/nghminh163) and [this T430 repository](https://github.com/nghminh163/macos-thinkpad-t430), without them this may not have been possible.
+This is still under development, I will continue to work on creating the most Macintosh-like experience posible for this machine.
+Have fun, but use at your own risk.
 
 **Working:**
 - Intel HD Graphics 288MB with QE/CI
