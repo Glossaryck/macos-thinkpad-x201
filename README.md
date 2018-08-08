@@ -22,7 +22,7 @@ Have fun, but use at your own risk.
 **_I. Preparation_**
 You will need:
 - A thumb drive of at least 8GB
-- A computer with macOS preinstalled (a virtual machine works as well, I recommend [this](https://techsviewer.com/how-to-install-mac-os-x-el-capitan-on-vmware-on-pc/)
+- A computer with macOS preinstalled (a virtual machine works as well, I recommend [this](https://techsviewer.com/how-to-install-mac-os-x-el-capitan-on-vmware-on-pc/))
 - An Apple ID
 
 **_II. Creating the installation medium_**
