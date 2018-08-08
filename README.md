@@ -3,6 +3,7 @@
 
 Working:
 - Intel HD Graphics 288MB with QE/CI
+- RAM DDR3 at 1334MHz
 - Keyboard + Touchpad
 - Ethernet (LAN)
 - Bluetooth
