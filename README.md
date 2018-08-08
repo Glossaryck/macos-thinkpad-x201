@@ -16,12 +16,10 @@
 - VGA Output (no support)
 
 **_Preparation_**
-```
 You will need:
 - A thumb drive of at least 8GB
 - A computer with macOS preinstalled (a virtual machine works as well, I recommend [this](https://techsviewer.com/how-to-install-mac-os-x-el-capitan-on-vmware-on-pc/)
 - An Apple ID
-```
 
 **_Creating the installation medium_**
 ```
@@ -43,7 +41,8 @@ The hidden file on the OS X Install ESD disk image will now show up.
 - Copy the Packages folder from OS X Install ESD to the Installation folder mentioned above.
 - Copy everything from the folder, excluding the Packages folder, to the root of the target USB drive.
 - Install Clover on the USB.
- Use the installer from tools.zip above, change install location to the target USB drive, then customize the installation as follows:
+ Use the installer from tools.zip above, change install location to the target USB drive.
+ Then customize the installation as follows:
  + Expand the Bootloader section and check "Install boot0af in MBR"
  + Expand the CloverEFI section and check "CloverEFI 64-bits SATA"
  + Leave every section not mentioned above unchecked.
@@ -61,4 +60,10 @@ The hidden file on the OS X Install ESD disk image will now show up.
 - Copy the kexts in the kext folder from this repo to the "Other" folder.
 - Finally, replace the config.plist file in EFI/CLOVER/ with the config.plist file found in this repo
 - You should now be able to boot to the installer using the USB.
+```
+
+**_Install macOS_**
+```
+- Boot to the installer using the USB drive.
+- Follow the instructions and install as normal.
 ```
