@@ -22,7 +22,6 @@ You will need:
 - An Apple ID
 
 **_Creating the installation medium_**
-```
 Creating the installer manually is recommended since UniBeast may have bugs on this particular machine.
 - Grab a copy of macOS Sierra from the App Store on the prepared OS X machine.
 - Right click on the installer app you just downloaded and select Show Package Contents.
@@ -30,8 +29,10 @@ Creating the installer manually is recommended since UniBeast may have bugs on t
 - Open the SharedSupport folder.
 - Mount the InstallESD.dmg disk image.
 - Launch Terminal and execute these commands:
+```
  defaults write com.apple.finder AppleShowAllFiles YES
  killall Finder
+```
 The hidden file on the OS X Install ESD disk image will now show up.
 - Mount the BaseSystem.dmg file from the OS X Install ESD disk image.
 - Fire up Disk Utility and format the target USB in HFS+ (Journaled)
@@ -46,10 +47,8 @@ The hidden file on the OS X Install ESD disk image will now show up.
  + Expand the Bootloader section and check "Install boot0af in MBR"
  + Expand the CloverEFI section and check "CloverEFI 64-bits SATA"
  + Leave every section not mentioned above unchecked.
-```
 
 **_Modifing the installation medium_**
-```
 - First off, on the installation USB go to System/Library/Extensions and delete:
  AppleIntelHDGraphics.kext
  AppleIntelHDGraphicsFB.kext
@@ -60,21 +59,18 @@ The hidden file on the OS X Install ESD disk image will now show up.
 - Copy the kexts in the kext folder from this repo to the "Other" folder.
 - Finally, replace the config.plist file in EFI/CLOVER/ with the config.plist file found in this repo
 - You should now be able to boot to the installer using the USB.
-```
 
 **_Install macOS_**
-```
 - Boot into the USB drive. The Installer should now start up.
 - Follow the instructions and install as normal.
-```
 
 **_Post-installation_**
-```
 - Boot to the installer drive.
 - Launch Terminal and execute these commands:
+```
  cd /Volumes/Macintosh\ HD/System/Library/Extensions
  rm -rf AppleIntelHDGraphics.kext
  rm -rf AppleIntelHDGraphicsFB.kext
+```
 - Boot to the partition where you installed OS X. Follow the onscreen instructions to finish the installation. 
 After completing the initial setup instructions, your desktop should now appear. Welcome to macOS! 
-```
